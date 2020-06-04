@@ -42,25 +42,36 @@ const quotes = [
 ***/
 
 const getRandomQuote = quotesArray => {
-
   let randomNumber = Math.floor(Math.random() * quotesArray.length);
 
-  for (let i = 0; i< quotesArray.length; i++) {
+  for (let i = 0; i < quotesArray.length; i++) {
     let randomQuote = quotesArray[randomNumber];
-    return randomQuote; 
+    return randomQuote;
   }
 };
 
-console.log(getRandomQuote(quotes));
-
-
-
 
 /***
- * `printQuote` function
+ * `printQuote` function(
 ***/
 
+const printQuote = () => {
+  const randomQuote = getRandomQuote(quotes)
+  let htmlString = `<p class ="quote">${randomQuote.quote}</p><br><p class= "source">${randomQuote.source}`
+  if (!!randomQuote.citation) {
+    htmlString += `<span class = "citation"> ${randomQuote.citation}</span></p>`
+  } else if (!!randomQuote.year) {
+    htmlString += `<span class = "citation"> ${randomQuote.year}</span></p>`
+  } else {
+    htmlString += `</p>`
+  }
+  document.getElementById('quote-box').innerHTML = htmlString; 
+  return htmlString;
+}
 
+
+
+console.log(printQuote());
 
 /***
  * click event listener for the print quote button
