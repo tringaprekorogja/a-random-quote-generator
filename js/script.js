@@ -42,11 +42,18 @@ const quotes = [
 ***/
 
 const getRandomQuote = quotesArray => {
-  let randomQuote = quotesArray[Math.floor(Math.random() * quotesArray.length)];
-  return randomQuote;
+
+  let randomNumber = Math.floor(Math.random() * quotesArray.length);
+
+  for (let i = 0; i< quotesArray.length; i++) {
+    let randomQuote = quotesArray[randomNumber];
+    return randomQuote; 
+  }
 };
 
-console.log (getRandomQuote(quotes));
+console.log(getRandomQuote(quotes));
+
+
 
 
 /***
