@@ -4,18 +4,35 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 // For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// Check the "Project Resources" section of the project instructions
+// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
  * `quotes` array 
 ***/
 const quotes = [
-  {},
-  {},
-  {},
-  {},
-  {}
+  {
+    quote: "The only true wisdom is knowing you know nothing.",
+    source: "Socrates"
+  },
+  {
+    quote: "The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and then starting on the first one.",
+    source: "Mark Twain"
+  },
+  {
+    quote: "The roots of education are bitter, but the fruit is sweet.",
+    source: "Aristotle"
+  },
+  {
+    quote: "Do not waste your time looking for an obstacle, maybe there is none.",
+    source: "Franz Kafka",
+    year: 1920
+  },
+  {
+    quote: "If you only read the books that everyone else is reading, you can only think what everyone else is thinking.",
+    source: "Haruki Murakami",
+    citation: "Norwegian Wood"
+  }
 ];
 
 
