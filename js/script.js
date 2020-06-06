@@ -41,14 +41,12 @@ const quotes = [
  * `getRandomQuote` function
 ***/
 
-const getRandomQuote = quotesArray => {
-  let randomNumber = Math.floor(Math.random() * quotesArray.length);
-
-  for (let i = 0; i < quotesArray.length; i++) {
-    let randomQuote = quotesArray[randomNumber];
-    return randomQuote;
-  }
+const getRandomQuote = ()=> {
+  let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+  return randomQuote;
 };
+
+
 
 
 /***
@@ -56,12 +54,12 @@ const getRandomQuote = quotesArray => {
 ***/
 
 const printQuote = () => {
-  const randomQuote = getRandomQuote(quotes)
+  const randomQuote = getRandomQuote()
   let htmlString = `<p class ="quote">${randomQuote.quote}</p><br><p class= "source">${randomQuote.source}`
   if (!!randomQuote.citation) {
     htmlString += `<span class = "citation"> ${randomQuote.citation}</span></p>`
   } else if (!!randomQuote.year) {
-    htmlString += `<span class = "citation"> ${randomQuote.year}</span></p>`
+    htmlString += `<span class = "year"> ${randomQuote.year}</span></p>`
   } else {
     htmlString += `</p>`
   }
