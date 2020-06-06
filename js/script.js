@@ -1,15 +1,11 @@
 /******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
+project 1 - A Random Quote Generator - displays random famous quotes each time a button is clicked.
 ******************************************/
 
-// For assistance: 
-// Check the "Project Resources" section of the project instructions
-// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
+
+// creates a quotes array containing objects that store the data for the quotes.
+
 const quotes = [
   {
     quote: "The only true wisdom is knowing you know nothing.",
@@ -37,11 +33,10 @@ const quotes = [
 
 
 
-/***
- * `getRandomQuote` function
-***/
 
-const getRandomQuote = ()=> {
+//creates a variable to store a random number and returns a random quote object.
+
+const getRandomQuote = () => {
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
   return randomQuote;
 };
@@ -49,9 +44,14 @@ const getRandomQuote = ()=> {
 
 
 
-/***
- * `printQuote` function(
-***/
+/*
+ 1. Creates a variable and calles the getRandomQuote() function which returns a random quote.
+ 2. Creaters a variable to store the HTML string and sets it equal to a string containing
+    two <p> elements that have the random quote object’s quote and source property.
+ 4. Tests if the random quote object has a citation property and adds a <span> element.
+ 5. Tests if the random quote object has a year property and adds a <span> element.
+ 6. Returns the HTML string.
+*/
 
 const printQuote = () => {
   const randomQuote = getRandomQuote()
@@ -63,17 +63,13 @@ const printQuote = () => {
   } else {
     htmlString += `</p>`
   }
-  document.getElementById('quote-box').innerHTML = htmlString; 
+  document.getElementById('quote-box').innerHTML = htmlString;
   return htmlString;
 }
 
-
-
-console.log(printQuote());
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+/*
+  Adds an Event Listener to the element with a load-quote id, so each time the click event 
+  happens the printQuote() function is called. 
+*/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
